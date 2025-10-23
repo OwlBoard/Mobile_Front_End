@@ -4,7 +4,7 @@ import '../config/api_config.dart';
 import '../models/comment_model.dart';
 
 class CommentsApiService {
-  static final String _baseUrl = '${ApiConfig.commentsServiceUrl}${ApiConfig.commentsEndpoint}';
+  static final String _baseUrl = '${ApiConfig.baseUrl}${ApiConfig.commentsEndpoint}';
 
   // Create a new comment
   static Future<Comment> createComment({

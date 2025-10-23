@@ -5,7 +5,7 @@ import '../models/user_model.dart';
 import '../models/board_model.dart';
 
 class UserApiService {
-  static final String _baseUrl = '${ApiConfig.userServiceUrl}${ApiConfig.usersEndpoint}';
+  static final String _baseUrl = '${ApiConfig.baseUrl}${ApiConfig.usersEndpoint}';
 
   // User Registration
   static Future<AuthResponse> register(RegisterRequest request) async {
