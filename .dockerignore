@@ -1,0 +1,32 @@
+# Docker
+*.dockerfile
+docker-compose*.yml
+Dockerfile*
+
+# Build outputs
+build/
+.dart_tool/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+!README.md
+
+# Test files
+test/
+**/*_test.dart
+
+# Development files
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+analysis_options.yaml
