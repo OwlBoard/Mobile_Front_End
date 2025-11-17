@@ -18,8 +18,8 @@ class UserApiService {
 
       final response = await http.post(
         Uri.parse('$_baseUrl/register'),
-        headers: ApiConfig.formHeaders,
-        body: body.entries.map((e) => '${e.key}=${Uri.encodeComponent(e.value.toString())}').join('&'),
+        headers: ApiConfig.defaultHeaders,
+        body: json.encode(body),
       ).timeout(ApiConfig.connectTimeout);
 
       if (response.statusCode == 200 || response.statusCode == 201) {
@@ -35,12 +35,15 @@ class UserApiService {
   // User Login
   static Future<AuthResponse> login(LoginRequest request) async {
     try {
-      final body = 'email=${Uri.encodeComponent(request.email)}&password=${Uri.encodeComponent(request.password)}';
+      final body = {
+        'email': request.email,
+        'password': request.password,
+      };
 
       final response = await http.post(
         Uri.parse('$_baseUrl/login'),
-        headers: ApiConfig.formHeaders,
-        body: body,
+        headers: ApiConfig.defaultHeaders,
+        body: json.encode(body),
       ).timeout(ApiConfig.connectTimeout);
 
       if (response.statusCode == 200) {
