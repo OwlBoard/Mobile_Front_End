@@ -1,7 +1,7 @@
 class ApiConfig {
   // Base URLs for services
   static const String baseUrl = 
-      String.fromEnvironment('API_GATEWAY_URL', defaultValue: 'http://localhost:9000');
+      String.fromEnvironment('API_GATEWAY_URL', defaultValue: 'http://localhost:3001');
   
   // Endpoints completos (incluyendo el prefijo de la API)
   static const String usersEndpoint = '/api/users';
